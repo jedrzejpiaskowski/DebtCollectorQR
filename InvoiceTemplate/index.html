@@ -1,0 +1,173 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Invoice</title>
+    <style>
+        body,
+        html {
+            margin: 0 auto;
+            padding: 0;
+            height: 297mm;
+            width: 210mm;
+        }
+
+        .invoice-box {
+            position: relative;
+            height: calc(100% - 2cm);
+            /* width: calc(100% - 2cm); */
+            padding: 1cm;
+            font-size: 16px;
+            line-height: 24px;
+            font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
+            color: #555;
+        }
+
+        .invoice-footer {
+            position: absolute;
+            bottom: 0.5cm;
+            left: 0;
+            width: calc(100% - 2cm);
+            margin: 0 1cm 0cm 1cm;
+            padding-top: 0.1cm;
+            border-top: 1px solid gray;
+            color: grey;
+            font-size: 12px;
+            text-align: center;
+            font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
+        }
+
+        .invoice-box table {
+            width: 100%;
+            line-height: inherit;
+            text-align: left;
+        }
+
+        .invoice-box table td {
+            padding: 5px;
+            vertical-align: top;
+        }
+
+        .invoice-title {
+            text-align: center;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        tr.invoice-title td {
+            padding: 2cm 0 1cm 0;
+        }
+
+        .invoice-box table tr td:nth-child(2) {
+            text-align: right;
+        }
+
+        .invoice-box table tr.information td {
+            padding-bottom: 40px;
+        }
+
+        table.receipt {
+            border-collapse: collapse;
+            margin-bottom: 1cm;
+        }
+
+        .left {
+            text-align: left !important;
+        }
+
+        .right {
+            text-align: right !important;
+        }
+
+        .receipt tr:first-child {
+            border-bottom: 1px solid grey;
+            border-top: 1px solid grey;
+        }
+
+        .receipt tr:last-child td:last-child {
+            border-top: 1px solid lightgray;
+        }
+
+        .receipt tr th,
+        .receipt tr td {
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="invoice-box">
+        <table cellpadding="0" cellspacing="0">
+            <tr class="top">
+                <td width="55%">
+                    <!-- <img src="logo.png" style="max-width:70%"> -->
+                </td>
+                <td>
+                    <table>
+                        <tr>
+                            <td>Created:</td>
+                            <td>@@CreatedDate@@</td>
+                        </tr>
+                        <tr>
+                            <td>Payment date:</td>
+                            <td>@@PaymentDate@@</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr class='invoice-title'>
+                <td colspan="2">
+                    <hr />Invoice @@InvoiceNumber@@
+                    <hr />
+                </td>
+            </tr>
+            <tr class="information">
+                <td>
+                    <b>Seller:</b><br>
+                    X<br>
+                    Y<br>
+                    Z<br>
+                </td>
+
+                <td>
+                    <b>Seller:</b><br>
+                    @@ClientName@@
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="2">
+                    <table class='receipt'>
+                        <tr>
+                            <th>LP</th>
+                            <th>Service</th>
+                            <th>Quantity</th>
+                            <th>Discount</th>
+                            <th class='right'>Price</th>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td class='left'>@@ServiceDesc@@</td>
+                            <td>1.</td>
+                            <td>0%</td>
+                            <td class='right'>@@Price@@</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"></td>
+                            <td class='right'><b>Total: @@Price@@</b></td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td class='right' colspan="2"><img src="@@QrCodeFilePath@@" style="width: 25%"></td>
+            </tr>
+        </table>
+        <div class="invoice-footer">
+            Footer info
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<div class='form-container'>
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>QR</mat-card-title>
+            <mat-card-subtitle>Debt Collector</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+            <form class="vertical-form">
+                <mat-form-field>
+                    <mat-label>Service</mat-label>
+                    <input matInput placeholder="Ex. Pizza">
+                </mat-form-field>
+
+                <mat-form-field>
+                    <mat-label>Price</mat-label>
+                    <input type="number" matInput value="20.50">
+                    <span matSuffix>PLN</span>
+                </mat-form-field>
+
+                <mat-form-field>
+                    <mat-label>Buyer</mat-label>
+                    <input matInput>
+                </mat-form-field>
+
+                <mat-form-field>
+                    <mat-label>E-mail</mat-label>
+                    <input type="email" matInput>
+                </mat-form-field>
+            </form>
+        </mat-card-content>
+        <mat-card-actions align='end'>
+            <button mat-raised-button color='primary'>LIKE</button>
+            <button mat-raised-button color='accent'>SHARE</button>
+        </mat-card-actions>
+    </mat-card>
+</div>

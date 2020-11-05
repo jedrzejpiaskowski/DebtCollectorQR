@@ -1,0 +1,11 @@
+##
+POST https://localhost:5101/api/qr/GenerateRequest
+Content-Type: application/json
+
+{
+    "Buyer": "Jędrek",
+    "BuyerEmail": "jd.piaskowski@gmail.com",
+    "Price": 12.50,
+    "ServiceDescription": "żarcie czy coś",
+    "SendInvoice": true
+}
